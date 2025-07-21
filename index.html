@@ -96,12 +96,20 @@
             margin-top: 80px;
             padding: 120px 0;
             text-align: center;
-            background-image: linear-gradient(rgba(240, 249, 255, 0.9), rgba(224, 242, 254, 0.9)), url('Photos/DJI_20250707153031_0384_D.JPG');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: rgba(240, 249, 255, 0.8);
             position: relative;
             overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(240, 249, 255, 0.85) 0%, rgba(224, 242, 254, 0.85) 100%);
+            z-index: 0;
         }
 
         .hero::before {
@@ -636,14 +644,20 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Professional Aerial<br>Photography Services</h1>
-        <p class="subtitle">Elevate Your Visuals with Stunning Drone Photography & Videography</p>
-        <div class="hero-cta">
-            <a href="#book" class="book-btn">Book an Appointment</a>
-            <div class="social-links">
-                <a href="https://www.facebook.com/profile.php?id=61563031974419" target="_blank" title="Facebook">f</a>
-                <a href="https://www.youtube.com/@HorizonHeightsProductions" target="_blank" title="YouTube">▶</a>
-                <a href="#" title="Instagram">◐</a>
+        <video autoplay muted loop id="heroVideo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+            <source src="ray.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div style="position: relative; z-index: 1;">
+            <h1>Professional Aerial<br>Photography Services</h1>
+            <p class="subtitle">Elevate Your Visuals with Stunning Drone Photography & Videography</p>
+            <div class="hero-cta">
+                <a href="#book" class="book-btn">Book an Appointment</a>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61563031974419" target="_blank" title="Facebook">f</a>
+                    <a href="https://www.youtube.com/@HorizonHeightsProductions" target="_blank" title="YouTube">▶</a>
+                    <a href="#" title="Instagram">◐</a>
+                </div>
             </div>
         </div>
     </section>
