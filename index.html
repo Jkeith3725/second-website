@@ -638,6 +638,196 @@
                 flex-direction: column;
             }
         }
+
+        /* Contact Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            background-color: var(--primary-white);
+            margin: 2% auto;
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 1000px;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close {
+            color: var(--gray-medium);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: var(--accent-orange);
+        }
+
+        .modal-content h2 {
+            color: var(--accent-blue);
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .contact-subtitle {
+            color: var(--gray-medium);
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .contact-info h3 {
+            color: var(--accent-blue);
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-item i {
+            font-size: 24px;
+            color: var(--accent-orange);
+        }
+
+        .info-item a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-item a:hover {
+            color: var(--accent-orange);
+        }
+
+        .social-section {
+            margin-top: 40px;
+        }
+
+        .social-section h4 {
+            margin-bottom: 15px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            font-size: 30px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent-blue);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+        }
+
+        .submit-btn {
+            background: var(--gradient-sunset);
+            color: var(--primary-white);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .map-container {
+            margin-top: 40px;
+        }
+
+        .map-container h3 {
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .modal-content {
+                width: 95%;
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -884,6 +1074,121 @@
         </div>
     </footer>
 
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Get In Touch</h2>
+            <p class="contact-subtitle">Let's capture your vision from new heights!</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <i>📱</i>
+                        <div>
+                            <strong>Phone</strong><br>
+                            <a href="tel:3045433081">(304) 543-3081</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i>✉️</i>
+                        <div>
+                            <strong>Email</strong><br>
+                            <a href="mailto:horizonheightsproductions@gmail.com">horizonheightsproductions@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i>📍</i>
+                        <div>
+                            <strong>Service Area</strong><br>
+                            Marietta & Mid-Ohio Valley
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i>🕐</i>
+                        <div>
+                            <strong>Available</strong><br>
+                            24/7
+                        </div>
+                    </div>
+                    
+                    <div class="social-section">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/profile.php?id=61563031974419" target="_blank">📘</a>
+                            <a href="#" target="_blank">📷</a>
+                            <a href="#" target="_blank">🎵</a>
+                            <a href="https://www.youtube.com/@HorizonHeightsProductions" target="_blank">📺</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" action="mailto:horizonheightsproductions@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Interested In</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service...</option>
+                            <option value="Real Estate Photography">Real Estate Photography</option>
+                            <option value="Aerial Videography">Aerial Videography</option>
+                            <option value="Marketing Videos">Marketing Videos</option>
+                            <option value="Event Coverage">Event Coverage</option>
+                            <option value="Custom Project">Custom Project</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-method">Preferred Contact Method</label>
+                        <select id="contact-method" name="contact-method">
+                            <option value="Email">Email</option>
+                            <option value="Phone">Phone</option>
+                            <option value="WhatsApp">WhatsApp</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="timeline">Project Timeline</label>
+                        <input type="text" id="timeline" name="timeline" placeholder="e.g., Within 2 weeks">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            
+            <div class="map-container">
+                <h3>Service Area</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.1234567890123!2d-81.4567890123456!3d39.42012345678901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88307b4e0e1a2c1f%3A0x1a2b3c4d5e6f7g8h!2sMarietta%2C%20OH!5e0!3m2!1sen!2sus!4v0000000000000"
+                    width="100%" 
+                    height="300" 
+                    style="border:0; border-radius: 10px;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -951,6 +1256,42 @@
             const scrolled = window.pageYOffset;
             const hero = document.querySelector('.hero');
             hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+
+        // Contact Modal Functionality
+        const modal = document.getElementById('contactModal');
+        const contactLinks = document.querySelectorAll('a[href="#contact"]');
+        const closeBtn = document.querySelector('.close');
+
+        // Open modal when any contact link is clicked
+        contactLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+        });
+
+        // Close modal when X is clicked
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when clicking outside of it
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
         });
     </script>
 </body>
